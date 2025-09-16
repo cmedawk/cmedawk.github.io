@@ -1,36 +1,27 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Prueba GitHub Pages</title>
-        <link rel="stylesheet" href="./assets/style.css">
-    </head>
-    <body>
-        <header class="site-header">
-            <h1>Prueba GitHub Pages</h1>
-            <p class="lead">HTML y CSS separados — lista para desplegar en Pages</p>
-        </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Página de ejemplo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Bienvenido</h1>
+    <p>Hola 👋 esta es una página de ejemplo para GitHub Pages.</p>
+    <button id="btn">Haz click</button>
+    <pre id="output"></pre>
+  </div>
 
-        <main class="container">
-            <section class="card">
-                <h2>Hola 👋</h2>
-                <p>Este es un ejemplo mínimo con estilos en un archivo <code>styles.css</code> separado.</p>
-                <a class="btn" href="#" id="demoLink">Haz click aquí</a>
-                <p id="msg" class="msg"></p>
-            </section>
-        </main>
+  <script>
+    const btn = document.getElementById('btn');
+    const out = document.getElementById('output');
 
-        <footer class="site-footer">
-            <small>Proyecto de prueba para GitHub Pages</small>
-        </footer>
-        
-        <script>
-        document.getElementById('demoLink').addEventListener('click', function (e) {
-            e.preventDefault();
-            const msg = document.getElementById('msg');
-            msg.textContent = 'Click registrado — ¡funciona! ✅';
-            });
-        </script>
-    </body>
+    btn.addEventListener('click', () => {
+      const now = new Date();
+      out.textContent = `Click detectado ✔️\nFecha y hora: ${now.toLocaleString()}`;
+    });
+  </script>
+</body>
 </html>
